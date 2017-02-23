@@ -6,6 +6,7 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.pages = pageRouting.pageList;
     this.state = {
       currentPage: 0
     };
@@ -16,17 +17,18 @@ class App extends React.Component {
       currentPage: page
     });
   }
+
   componentWillMount(){
     pageRouting.setPage = ((page) => this.changePage(page));
   }
+  
   render() {
-    let pages = pageRouting.pageList;
     let currentPage = this.state.currentPage;
 
     return (
       <div>
-        <TopNav handlePage={this.changePage} />
-        <main id='page'>{pages[currentPage]}</main>
+        <TopNav />
+        <main id='page'>{this.pages[currentPage]}</main>
       </div>
     );
   }

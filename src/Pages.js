@@ -28,24 +28,10 @@ const items = [
   },
 ];
 
-/*function Pages(pages) {
-  this.navItems = pages.map((page)=>page.title);
-  //array of jsx elements
-  this.pages = pages.map((item, index) => {
-     return React.createElement(item.component, {id:item.page_id}, null);
-  });
-  this.context = [0];
-  this.setPage = function(){};
-  this.navigateTo = function(page){
-    if(this.context[this.context.length-1] !== page) {
-      this.context.push(page);
-      this.setPage(page);
-    }
-  }
-  this.returnTo = function(page){
-      return this.context.pop();
-  }
-}*/
+const getItemsByHash = {};
+for(let i in items) {
+    getItemsByHash['#'+items[i].title] = +i;
+}
 
 let PageRouting = function (pages) {
   const navItems = pages.map((page)=>page.title);
@@ -53,13 +39,11 @@ let PageRouting = function (pages) {
   const pageList = pages.map((item, index) => {
      return React.createElement(item.component, {id:item.page_id}, null);
   });
-  let context = [0];
+
   let setPage = function(page){};
   const navigateTo = function(page){
-    if(context[context.length-1] !== page) {
-      context.push(page);
+      window.location.hash = items[page].title;
       this.setPage(page);
-    }
   }
 
   return {
@@ -72,5 +56,15 @@ let PageRouting = function (pages) {
 }
 
 let pageRouting = new PageRouting(items);
+pageRouting.navigateTo(0);
+
+window.onpopstate = function(){
+    let pageToGo = getItemsByHash[window.location.hash];
+    if(pageToGo)
+        pageRouting.setPage(pageToGo);
+    else {
+        history.back(); //If entering a wrong hash manually, it'll return to previous valid hash
+    }
+};
 
 export default pageRouting;
