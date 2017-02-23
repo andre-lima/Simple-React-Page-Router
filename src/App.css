@@ -1,0 +1,63 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #2B2D42;
+}
+
+#root div nav {
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  background: #FF1654;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul {
+  border: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul .item {
+  display: block;
+  margin: 0;
+  padding: 10px 20px 9px 20px;
+  background: #FF1654;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: 'Microsoft JhengHei';
+  cursor: pointer;
+}
+
+nav ul .item:hover {
+  background: #E9144D;
+}
+
+#page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home {
+  color: blue;
+}
+
+#game {
+  color: red;
+}
+
+#about-me {
+  color: green;
+}
+
+#contact {
+  color: yellow;
+}
