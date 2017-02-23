@@ -1,6 +1,6 @@
 import React from 'react';
-import TopNav from './TopNav.js';
 import pageRouting from './Pages.js';
+import TopNav from './TopNav.js';
 import './App.css';
 
 class App extends React.Component {
@@ -21,7 +21,7 @@ class App extends React.Component {
   componentWillMount(){
     pageRouting.setPage = ((page) => this.changePage(page));
   }
-  
+
   render() {
     let currentPage = this.state.currentPage;
 

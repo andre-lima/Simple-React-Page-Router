@@ -29,7 +29,7 @@ const items = [
 ];
 
 const getItemsByHash = {};
-for(let i in items) {
+for(let i = 0; i < items.length; ++i) {
     getItemsByHash['#'+items[i].title] = +i;
 }
 
@@ -60,7 +60,8 @@ pageRouting.navigateTo(0);
 
 window.onpopstate = function(){
     let pageToGo = getItemsByHash[window.location.hash];
-    if(pageToGo)
+    
+    if(pageToGo || pageToGo === 0)
         pageRouting.setPage(pageToGo);
     else {
         history.back(); //If entering a wrong hash manually, it'll return to previous valid hash
