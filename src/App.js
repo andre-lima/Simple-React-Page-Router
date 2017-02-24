@@ -1,6 +1,8 @@
 import React from 'react';
 import pageRouting from './Pages.js';
 import TopNav from './TopNav.js';
+import Main from './Main.js';
+import Footer from './Footer.js';
 import './App.css';
 
 class App extends React.Component {
@@ -26,9 +28,10 @@ class App extends React.Component {
     let currentPage = this.state.currentPage;
 
     return (
-      <div>
+      <div className='app'>
         <TopNav />
-        <main id='page'>{this.pages[currentPage]}</main>
+        <Main id='page'>{this.pages[currentPage]}</Main>
+        <Footer />
       </div>
     );
   }

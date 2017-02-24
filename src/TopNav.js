@@ -1,5 +1,6 @@
 import React from 'react';
 import pageRouting from './Pages.js';
+import './TopNav.css';
 
 export default class TopNav extends React.Component {
   handleClick(itemId) {

@@ -1,0 +1,28 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+margin-top: 20px;
+  padding: 0;
+  color: #EEEEEE;
+  background: #593001;
+  height: 72px;
+
+}
+
+#footer p {
+    text-align: center;
+    padding: 25px;
+    font-size: 14pt;
+}
+
+#footer p a {
+    text-decoration: underline;
+    color: #DDDDDD;
+}
+
+#footer p a:visited {
+    color: #DDDDDD;
+}
