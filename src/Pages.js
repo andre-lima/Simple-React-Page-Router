@@ -24,7 +24,7 @@ const items = [
 
 const getItemsByHash = {};
 for(let i = 0; i < items.length; ++i) {
-    getItemsByHash['#'+items[i].title] = +i;
+    getItemsByHash['#'+items[i].page_id] = +i;
 }
 
 let PageRouting = function (pages) {
@@ -36,34 +36,42 @@ let PageRouting = function (pages) {
 
   let setPage = function(page){};
   const navigateTo = function(page){
-      window.location.hash = items[page].title;
       this.setPage(page);
+      window.location.hash = items[page].page_id;
   }
 
   //Expose API for the Pages system
   return {
-      setPage,
-      navigateTo,
-      pageList,
-      navItems
+      setPage, //Change page without changing hash
+      navigateTo,  //Change page and change hash
+      pageList,  //List of page components
+      navItems //Name of navigation items you can use to access the components
   }
-
 }
 
 //Create page object and set to initial page
 let pageRouting = new PageRouting(items);
-//pageRouting.navigateTo(0);
+
+//Executed when loading page for the first time, mannually changing the hash,
+//or returning from a different page
+let readHash = function(){
+    const hash = window.location.hash;
+
+    let pageToGo = getItemsByHash[hash];
+console.log(pageToGo, hash);
+    if(pageToGo || pageToGo === 0)
+        pageRouting.navigateTo(pageToGo);
+    else if (hash === '')
+        pageRouting.setPage(0);
+    else {
+        window.history.back();
+    }
+}
+
+//
+window.onload = readHash;
 
 //Executed when the hash changes.
-window.onpopstate = function(){
-    let pageToGo = getItemsByHash[window.location.hash];
-
-    if(pageToGo || pageToGo === 0)
-        pageRouting.setPage(pageToGo);
-    else {
-        //If entering a wrong hash manually, it'll return to previous valid hash
-        history.back();
-    }
-};
+window.onpopstate = readHash;
 
 export default pageRouting;
