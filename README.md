@@ -7,7 +7,7 @@ This is just a test where the main objective was to better understand React.
 
 ## Example page
 
-[Visit the page here](https://github.com/andre-lima/Simple-React-Page-Router) to see the code in action.
+[Visit the page here](https://andre-lima.github.io/Simple-React-Page-Router/) to see the code in action.
 
 ## Instructions
 

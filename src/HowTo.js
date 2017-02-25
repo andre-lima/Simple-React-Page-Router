@@ -4,7 +4,7 @@ export default class HowTo extends React.Component {
   render() {
     return (
       <div id={this.props.id}>
-          <h1>How to use this:</h1>
+          <h1>How to use this system:</h1>
           <ol>
               <li><a  href='https://github.com/andre-lima/Simple-React-Page-Router'>Click here</a> to go to the github repository for the project to clone the project.</li>
               <li>Copy the <code>Pages.js</code> to your <code>src</code> folder.</li>
