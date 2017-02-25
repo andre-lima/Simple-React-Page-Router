@@ -1,4 +1,4 @@
-# How To Simply Route Pages in React</h1>
+# How To Simply Route Pages in React
 This is a simple routing alternative to creating SPAs in React.
 
 At the time of creating this, I have very limited knowledge of React.
