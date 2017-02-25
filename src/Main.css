@@ -1,3 +1,19 @@
+main {
+    margin: 10px 30px;
+}
+
 #page {
     flex-grow: 1;
+}
+
+h1 {
+    color: #323131;
+}
+
+p, ul {
+    margin-left: 20px;
+}
+
+code {
+    font-size: 11pt;
 }

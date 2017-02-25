@@ -1,10 +1,9 @@
 import React from 'react';
 import Home from './Home.js';
-import Game from './Game.js';
-import AboutMe from './AboutMe.js';
+import HowTo from './HowTo.js';
 import Contact from './Contact.js';
 
-// item
+//Replace your components information here
 const items = [
   {
     title:'Home',
@@ -12,14 +11,9 @@ const items = [
     page_id: 'home',
   },
   {
-    title:'Game',
-    component: Game,
-    page_id: 'game',
-  },
-  {
-    title:'About Me',
-    component: AboutMe,
-    page_id: 'about-me',
+    title:'How To Use It',
+    component: HowTo,
+    page_id: 'how-to',
   },
   {
     title:'Contact',
@@ -46,6 +40,7 @@ let PageRouting = function (pages) {
       this.setPage(page);
   }
 
+  //Expose API for the Pages system
   return {
       setPage,
       navigateTo,
@@ -55,16 +50,19 @@ let PageRouting = function (pages) {
 
 }
 
+//Create page object and set to initial page
 let pageRouting = new PageRouting(items);
-pageRouting.navigateTo(0);
+//pageRouting.navigateTo(0);
 
+//Executed when the hash changes.
 window.onpopstate = function(){
     let pageToGo = getItemsByHash[window.location.hash];
-    
+
     if(pageToGo || pageToGo === 0)
         pageRouting.setPage(pageToGo);
     else {
-        history.back(); //If entering a wrong hash manually, it'll return to previous valid hash
+        //If entering a wrong hash manually, it'll return to previous valid hash
+        history.back();
     }
 };
 

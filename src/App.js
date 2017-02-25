@@ -8,9 +8,9 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.pages = pageRouting.pageList;
+    this.pages = pageRouting.pageList;  //Gets list of components from Pages.js
     this.state = {
-      currentPage: 0
+      currentPage: 0 //index on the this.pages variable
     };
     this.changePage = this.changePage.bind(this);
   }
@@ -20,6 +20,9 @@ class App extends React.Component {
     });
   }
 
+  //This function will replace the pageRouting.setPage so it can access
+  //the changePage function, chaging this components state, redering the
+  //new page.
   componentWillMount(){
     pageRouting.setPage = ((page) => this.changePage(page));
   }
@@ -30,7 +33,12 @@ class App extends React.Component {
     return (
       <div className='app'>
         <TopNav />
-        <Main id='page'>{this.pages[currentPage]}</Main>
+        <Main id='page'>
+            {
+                //Gets page component based on the current state
+                this.pages[currentPage]
+            }
+        </Main>
         <Footer />
       </div>
     );

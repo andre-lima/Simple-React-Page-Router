@@ -1,4 +1,4 @@
-p {
+#footer p {
   margin: 0;
   padding: 0;
 }
@@ -7,7 +7,7 @@ p {
 margin-top: 20px;
   padding: 0;
   color: #EEEEEE;
-  background: #593001;
+  background: #101112;
   height: 72px;
 
 }

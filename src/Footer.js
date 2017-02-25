@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer id='footer'>
-        <p>created by <a href='http://www.andredantas.com'>Andre Dantas</a></p>
+        <p>created by <a href='http://www.andredantas.com'>Andre Dantas</a> / 2017</p>
       </footer>
     );
   }
