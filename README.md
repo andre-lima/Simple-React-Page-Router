@@ -5,6 +5,10 @@ At the time of creating this, I have very limited knowledge of React.
 
 This is just a test where the main objective was to better understand React.
 
+## Example page
+
+[Visit the page here](https://github.com/andre-lima/Simple-React-Page-Router) to see the code in action.
+
 ## Instructions
 
 1.  [Click here](https://github.com/andre-lima/Simple-React-Page-Router) to go to the github repository for the project to clone the project.
