@@ -58,7 +58,7 @@ let readHash = function(){
     const hash = window.location.hash;
 
     let pageToGo = getItemsByHash[hash];
-console.log(pageToGo, hash);
+
     if(pageToGo || pageToGo === 0)
         pageRouting.navigateTo(pageToGo);
     else if (hash === '')
