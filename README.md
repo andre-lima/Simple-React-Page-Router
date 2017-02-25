@@ -11,16 +11,15 @@ This is just a test where the main objective was to better understand React.
 
 ## Instructions
 
-1.  [Click here](https://github.com/andre-lima/Simple-React-Page-Router) to go to the github repository for the project to clone the project.
-2.  Copy the `Pages.js` to your `src` folder.
-3.  Import your UI components there.
+1.  Copy the `Pages.js` to your `src` folder.
+2.  Import your UI components there.
     *   example: `import AboutMe from './AboutMe.js';`
-4.  Replace the components properties on the `items` variable
+3.  Replace the components properties on the `items` variable
     *   example: `title:'About Me', component: AboutMe, page_id: 'about-me',`
-5.  On your navigation, add an event that calls
+4.  On your navigation, add an event that calls
     *   example: `pageRouting.navigateTo(itemId);` where `itemId` is the index of the page on the `items` variable.
-6.  Now it gets messy...so it's better if you read the comments on the `App.js` file.
-7.  I guess that's all...
+5.  Now it gets messy...so it's better if you read the comments on the `App.js` file.
+6.  I guess that's all...
 
 
 ----------------------------------------
